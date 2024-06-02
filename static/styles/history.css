@@ -1,0 +1,129 @@
+/* HISTORY CSS THINGS */
+
+body{
+  height: auto;
+  font-family: 'Roboto';font-size: 22px;
+  color: #0A369D;
+}
+#background-element {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+#background-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.acct-hist{
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+}
+.left{
+  background-color: whitesmoke;
+  width: 20%;
+  display: grid;
+  height: 100vh;
+  text-align: center;
+  grid-template-rows: 12vh 35% auto auto;
+  position: relative;
+}
+.right{
+  width: 80%;
+}
+nav{
+  position: absolute;
+}
+#logo{
+  width: 80%;
+  align-self: flex-start;
+  margin: 2vh auto 0 auto;
+}
+.d-grid button{
+  height: 8vh;
+}
+.bottom{
+  align-self: flex-end;
+  margin-bottom: 2vh;
+  background: rgb(36,145,254);
+  background: linear-gradient(90deg, rgba(36,145,254,1) 0%, rgba(1,68,175,1) 100%); 
+}
+.prof-pic{
+  position: inherit;
+}
+.img-container{
+  margin: 0 auto;
+  height: 70%;
+  width: 60%;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 0 5px rgb(36,145,254);
+}
+.img-container img{
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.icon-color{
+  color: rgb(36,145,254);
+  width: 100%;
+  display: block;
+}
+.icon-color :hover{
+  color: rgb(1,68,175,1);
+}
+.btn a {
+  text-decoration: none;
+  width: 100%;
+  display: inline-block;
+}
+.header{
+  color: rgb(1,68,175,1);
+  position: relative;
+}
+.content{
+  background-color: white;
+  height: 70vh;
+  margin:3% 7%;
+  border-radius: 5px;
+  padding:1%;
+  z-index: 1;
+  position: relative;
+}
+table{
+  table-layout: auto;
+}
+.sumr{
+  width: 30vw;
+  overflow: auto;
+  scrollbar-width: 1%;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

@@ -1,0 +1,132 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"> -->
+    <title>FakeSense</title>
+</head>
+<body>
+
+  {% for message in messages%}
+  <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong>Message: </strong>{{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+  
+  <div id="div1">
+    <header>
+      <img class="logo" src="{% static 'images/logo-blue.png' %}" alt="No image found" />
+      <nav>
+        <ul class="nav_links">
+          <li><a href="#div2">Tutorial</a></li>
+          <li><a href="#div3">About</a></li>
+          <li><a href="#div5">Contact</a></li>
+        </ul>
+      </nav>
+      {% if user.is_authenticated %}
+      <a href="/settings" class="cta"><button>Profile</button></a>
+
+      {% else %}
+      <a href="/signup" class="cta"><button>Login/Signup</button></a>
+      
+      {% endif %}
+    </header>
+    <article>
+      <div class="left_pane">
+        <div class="container">
+          <h1>
+            Make the
+            <i>Fake <span style="color: rgba(255, 255, 255, 0%)">,</span></i
+            ><br />make <i>Sense.</i>
+          </h1>
+          <p>
+            We helps users combat online scams and<br />
+            fake news. FakeSense is a reliable tool for<br />
+            checking the authenticity of social media<br />
+            accounts and articles aiming to create a<br />
+            safer online environment.
+          </p>
+          <a href="#div3" class="cta"><button>Learn More</button></a>
+        </div>
+      </div>
+      <form id="textareaForm" class="right_pane" method="POST" action="">
+        {% csrf_token %}
+        <div class="right_pane">
+        <div class="textarea_bg">
+          <textarea
+            id="hometextarea_id"
+            name="textarea_name"
+            rows="20"
+            cols="0"
+            placeholder="Paste URL link/article here..."
+            oninput="updateCharacterCount()"
+          ></textarea>
+          <div class="textarea_characters">
+            <p id="characterCount">0 characters</p>
+          </div>
+        </div>
+
+        <div class="radio-btn_group">
+          <div>
+            <input type="radio" id="html" name="fav_language" value="HTML" checked/>
+            <label for="html">Article</label><br />
+
+            <input type="radio" id="css" name="fav_language" value="CSS" />
+            <label for="css">Account</label><br />
+          </div>
+          
+            <button type="submit"  id="verify_btn">Verify</button>
+        </div>
+        </div>
+      </form>
+    </article>
+  </div>
+  <div id="div2"></div>
+  <div id="div3"></div>
+  <div id="div4"></div>
+  <div id="div5"></div>
+
+  {% if user.is_authenticated%}
+  <!-- <div id="div1">
+    <h3>Hello {{fname}}</h3>
+    <h4>You've successfully logged in.</h4>
+  </div>
+  <div id="div2"></div>
+  <div id="div3"></div>
+  <div id="div4"></div>
+  <button type="submit"><a href="/signout">SignOut</a></button> -->
+  
+  {% else %}
+  <!-- <button type="submit"><a href="/signup">SignUp</a></button>
+  <button type="submit"><a href="/signin">SignIn</a></button> -->
+  
+  {% endif %}
+  <script src="" async defer></script>
+  
+</body>
+
+<script>
+  function updateCharacterCount() {
+    var button = document.getElementById("verify_btn");
+    var textarea = document.getElementById("hometextarea_id");
+    var text = textarea.value;
+    var count = textarea.value.length;
+
+    document.getElementById("characterCount").textContent = count + " characters";
+
+    if (count >= 1000) {
+      button.disabled = true;
+    } else {
+      button.disabled = false;
+    }
+  }
+</script>
+
+</html>

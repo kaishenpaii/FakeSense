@@ -1,0 +1,330 @@
+:root {
+    --blue-bg: #e5ebff;
+    --blue-med: #2191fb;
+    --blue-dark: #0a369d;
+    --blue-transparent: rgba(33, 145, 251, 25%);
+    --grey: #b6c2cd;
+    --white: #ffffff;
+    --white-transparent: rgba(255, 255, 255, 50%);
+    --btn-gradient: linear-gradient(
+      153deg,
+      rgba(36, 145, 254, 1) 37%,
+      rgba(1, 68, 175, 1) 100%
+    );
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Roboto";
+  }
+  #div1 {
+    background-color: var(--blue-bg);
+    background-image: url(../images/background1.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header li,
+  header a,
+  header button {
+    text-decoration: none;
+  }
+  
+  header {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px 20px 40px;
+  }
+  
+  .logo {
+    cursor: pointer;
+  }
+  
+  .nav_links {
+    list-style: none;
+  }
+  
+  .nav_links li {
+    display: inline-block;
+    position: relative;
+    padding: 0 30px;
+    margin-top: 10px;
+  }
+  
+  .nav_links li a {
+    color: var(--blue-dark);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    font-size: 24px;
+    display: inline-block;
+    padding: 10px 15px;
+    position: relative;
+  }
+  
+  .nav_links a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    height: 4px;
+    left: 50%;
+    position: absolute;
+    background: var(--blue-transparent);
+    transition: width 0.1s ease 0s, left 0.1s ease 0s;
+    width: 0;
+  }
+  .nav_links a:hover:after {
+    width: 100%;
+    left: 0;
+  }
+  
+  header button {
+    padding: 10px 20px;
+    color: var(--white);
+    font-size: 24px;
+    border-radius: 15px;
+    border: none;
+    opacity: 80%;
+    background-image: var(--btn-gradient);
+  }
+  
+  header button:hover {
+    opacity: 100%;
+  }
+  
+  article {
+    flex: 9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .left_pane, .right_pane {
+    flex: 1; 
+  }
+  
+  .left_pane {
+    /* flex: 2; */
+  
+    /* background-color: rgb(9, 255, 0); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .left_pane .container {
+    height: 70%;
+    width: 75%;
+  
+    margin: auto;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  
+    /* background-color: #ccc; */
+  }
+  
+  .left_pane h1,
+  .left_pane p {
+    color: var(--blue-dark);
+  }
+  
+  .left_pane h1 {
+    font-size: 70px;
+  }
+  
+  .left_pane p {
+    font-size: 24px;
+  }
+  
+  .left_pane button {
+    padding: 10px 35px;
+    color: var(--blue-dark);
+    font-size: 24px;
+    border-radius: 15px;
+    border: 3px solid var(--blue-dark);
+    opacity: 80%;
+    background-color: transparent;
+  }
+  
+  .left_pane button:hover{
+    opacity: 100%;
+    color: var(--white);
+    border: 3px solid var(--blue-med);
+    background-image: var(--btn-gradient);
+  }
+  
+  .right_pane {
+    /* flex: 3; */
+  
+    /* background-color: rgb(0, 255, 255); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .textarea_bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    width: 500px;
+    padding: 20px 45px;
+    border-radius: 35px;
+    background-color: var(--white-transparent);
+    overflow: hidden; /* Hide the default scrollbar */
+  }
+  
+  textarea {
+    flex: 9;
+    color: var(--blue-dark);
+    width: calc(100% - 10px); /* Subtract scrollbar width */
+    height: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 20px solid var(--white);
+    border-radius: 30px 30px 0 0;
+    outline: none;
+    resize: none;
+    overflow-y: scroll; /* Enable vertical scrollbar */
+  }
+  
+  /* Customize scrollbar */
+  textarea::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  textarea::-webkit-scrollbar-thumb {
+    background-color: var(--grey); /* Color of the scrollbar thumb */
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid transparent; /* Ensure the thumb doesn't exceed top part */
+  }
+  
+  .textarea_characters {
+    flex: 1;
+    color: var(--grey);
+    width: calc(100% - 10px); /* Subtract scrollbar width */
+    padding: 10px;
+    border-radius: 0 0 30px 30px;
+    border: 20px solid var(--white);
+    background-color: var(--white);
+  }
+  
+  .radio-btn_group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    position: relative;
+    width: 35vw;
+    margin-top: 30px ;
+  }
+  
+  .radio-btn_group div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    width: 17vw;
+  }
+  
+  /* Hide the default radio button */
+  input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--grey);
+    background-color: var(--white);
+    border-radius: 50%;
+    outline: none;
+  }
+  
+  /* Style the checked state */
+  input[type="radio"]:checked {
+    background-image: var(--btn-gradient);
+  }
+  
+  /* Style the inner circle for checked state */
+  input[type="radio"]:checked::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Style label associated with radio button */
+  label {
+    /* Add some margin or padding */
+    margin-right: 10px;
+    font-size: 24px;
+    color: var(--blue-dark);
+  }
+  
+  .radio-btn_group button{
+    padding: 10px 60px;
+    font-size: 24px;
+    border-radius: 15px;
+    color: var(--white);
+    border: 3px solid var(--blue-med);
+    background-image: var(--btn-gradient);
+    opacity: 80%;
+  }
+  
+  .radio-btn_group button:hover{
+    opacity: 100%;
+  }
+  
+  .radio-btn_group button:disabled{
+    background-color: var(--grey); /* Grey */
+    border: 3px solid var(--grey);
+    cursor: not-allowed;
+    background-image: none;
+  }
+  
+  #div2 {
+    background-color: var(--blue-bg);
+    background-image: url(../images/background2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+  }
+  #div3 {
+    background-color: var(--blue-bg);
+    background-image: url(../images/background3.png);
+    background-size: cover;
+    height: 70vh;
+    width: 100vw;
+  }
+  #div4 {
+    background-color: var(--blue-bg);
+    background-image: url(../images/background4.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+  }
+  #div5 {
+    background-color: var(--blue-bg);
+    background-image: url(../images/background5.png);
+    background-size: cover;
+    height: 35svh;
+    width: 100vw;
+  }

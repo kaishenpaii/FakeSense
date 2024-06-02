@@ -1,0 +1,304 @@
+:root {
+  --blue-bg: #e5ebff;
+  --blue-med: #2191fb;
+  --blue-dark: #0a369d;
+  --blue-transparent: rgba(33, 145, 251, 25%);
+  --grey: rgb(182, 194, 205);
+  --white: #ffffff;
+  --white-transparent: rgba(255, 255, 255, 50%);
+  --btn-gradient: linear-gradient(
+    153deg,
+    rgba(36, 145, 254, 1) 37%,
+    rgba(1, 68, 175, 1) 100%
+  );
+}
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Roboto";
+}
+#div1 {
+  background-color: var(--blue-bg);
+  background-image: url(../images/background1.png);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+header li,
+header a,
+header button {
+  text-decoration: none;
+}
+
+header {
+  /* flex: 1; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px 15px 40px;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  position: relative;
+  padding: 0 30px;
+  margin-top: 10px;
+}
+
+.nav_links li a {
+  color: var(--blue-dark);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  font-size: 24px;
+  display: inline-block;
+  padding: 10px 15px;
+  position: relative;
+}
+
+.nav_links a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  background: var(--blue-transparent);
+  transition: width 0.1s ease 0s, left 0.1s ease 0s;
+  width: 0;
+}
+.nav_links a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+header button {
+  padding: 10px 20px;
+  color: var(--white);
+  font-size: 24px;
+  border-radius: 15px;
+  border: none;
+  opacity: 80%;
+  background-image: var(--btn-gradient);
+}
+header button:hover {
+  opacity: 100%;
+}
+
+article {
+  height: 82vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: springgreen; */
+  /* padding: 0 40px 0 40px; */
+}
+.left-pane{
+  border-radius: 10px;
+}
+.verify-header {
+  border-radius: 10px 10px 0 0;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--blue-transparent);
+}
+.verify-header button {
+  height: 70px;
+  border: none;
+  color: var(--blue-med);
+  border-bottom: 4px solid var(--white);
+  font-size: 16px;
+  background-color: transparent;
+}
+.verify-header .article-button{
+  border-bottom: 4px solid var(--blue-transparent);
+}
+.verify-header button i {
+  color: var(--blue-med);
+}
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  background-color: var(--blue-bg);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px; /* Adjust spacing as needed */
+}
+.verify-textarea {
+  height: 40%;
+  background-color: var(--white);
+}
+.verify-textarea textarea {
+  margin: auto;
+  padding: 10px;
+  outline: none;
+  resize: none;
+  height: 100%;
+  width: 100%;
+  border: 20px solid var(--white);
+  overflow-y: scroll; /* Enable vertical scrollbar */
+  color: var(--blue-dark);
+}
+
+  /* Customize scrollbar */
+  textarea::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  textarea::-webkit-scrollbar-thumb {
+    background-color: var(--grey); /* Color of the scrollbar thumb */
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid transparent; /* Ensure the thumb doesn't exceed top part */
+  }
+
+.verify-footer {
+  border-radius: 0 0 10px 10px; 
+  background-color: var(--white);
+  color: var(--grey);
+}
+.verify-footer .character-holder{
+  height: 30px;
+}
+.verify-footer .auth-circle {
+  width: 12px;
+  height: 12px;
+  background-color: var(--blue-med);
+  border-radius: 50%;
+  margin-right: 10px; /* Adjust this value for spacing */
+}
+.col.d-flex.align-items-center {
+  justify-content: center;
+}
+.verify-button{
+  padding: 7px 20px;
+  color: var(--white);
+  font-size: 24px;
+  border-radius: 15px;
+  border: none;
+  opacity: 80%;
+  background-image: var(--btn-gradient);
+}
+
+.right_pane {
+  /* background-color: violet; */
+  border-radius: 10px;
+}
+.result-header {
+  border-radius: 10px 10px 0 0;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--blue-transparent);
+}
+.result-header button {
+  height: 70px;
+  border: none;
+  border-bottom: 4px solid var(--white);
+  color: var(--blue-med);
+  background-color: var(--white);
+}
+.result-header .result-button{
+  border-bottom: 4px solid var(--blue-transparent);
+}
+.result-header button i {
+  color: var(--blue-med);
+}
+.result-chart-header{
+  height: 100px;
+  background-color: var(--white);
+  color: var(--blue-med);
+}
+.result-label{
+  padding: 7px 20px;
+  border-radius: 10px;
+  background-color: var(--blue-transparent);
+}
+.result-chart{
+  position: relative;
+  height: 180px;
+  padding: 20px 0;
+  background-color: var(--white);
+}
+canvas {
+  display: block;
+  margin: 0 auto; /* Centers the canvas */
+}
+
+.chart-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  z-index: 1; /* Ensure the title is on top of the canvas */
+}
+.result-chart-footer{
+  width: 100%;
+  background-color: var(--white);
+}
+.probability-holder{
+  height: 100px;
+  color: var(--blue-med);
+  border-bottom: 1px solid var(--blue-transparent);
+}
+.probability-contents{
+  height: 50%;
+}
+.probability-holder-line{
+  border-right: 1px solid var(--blue-transparent);
+}
+.probability-holder span{
+  font-size: 20px;
+  font-weight: bold;
+}
+.result-chart-footer .auth-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 10px; /* Adjust this value for spacing */
+}
+.result-footer{
+  height: 100px;
+  color: var(--blue-med);
+  background-color: var(--white);
+}
+.result-footer-chart{
+  color: var(--blue-med);
+  background-color: var(--white);
+}
+.line-chart {
+  width: 80%;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.bar {
+  width: 100%;
+  height: 100%;
+}
+
+.segment {
+  float: left;
+  height: 100%;
+}
+.result-footer-chart-tags{
+  height: 10vh;
+  width: 80%;
+  border-radius: 0 0 10px 10px; 
+  color: var(--grey);
+  background-color: var(--white);
+}
+.chart-tags{
+  width: 80%;
+}

@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'styles/community.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <title>Community</title>
+</head>
+<body>
+  <div id="background-element">
+    <img id="background-img" src="{%static 'images/background.png'%}" alt="bg">
+  </div>  
+  <div class="acct-hist">
+    <a href="/homepage">
+      <img id="logo" src="{%static 'images/colorLogo.png'%}" alt="Fakesense">
+    </a>
+    <div class="right">
+      <nav class="navbar navbar-expand-lg my-3" >
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav gap-5">
+              <li class="nav-item ">
+                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover active fs-5" aria-current="page" href="/homepage#div2">Tutorial</a>
+              </li>
+              <li class="nav-item">
+                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover active fs-5" href="/homepage#div3">About</a>
+              </li>
+              <li class="isDisabled">
+                <a class=" fs-5 " href="#" aria-disabled="true">Community</a>
+              </li>
+              <li class="nav-item">
+                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover active fs-5" href="/homepage#div5">Contact</a>
+              </li>
+              <li class="nav-item icon-color">
+                <a class="link-offset-2 link-offset-3-hover active fs-5" href="#"><i class="bi bi-question-circle-fill icon-color"> </i></a>
+              </li>
+              <li class="nav-item icon-color">
+                <a class="link-offset-2 link-offset-3-hover fs-5" href="/settings"><i class="bi bi-gear-fill icon-color"> </i></a>
+              </li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="header ms-5 ps-5">
+        <h2>Community</h2>
+        <h5>Interact with others and gain more knowledge about reliable and verified sources.</h5>
+      </div>
+      <div class="content overflow-hidden rounded-5" id="gray">
+        <div class="sidetop d-flex justify-content-between align-items-center">
+          <div class="row">
+            <div class="d-flex gap-5 align-items-center">
+              <div class="row pic-cont">
+                <img src="{%static 'images/user_blank.jpg'%}" alt="adwknda" class="round">
+              </div>
+              <h4 class="text-blue row">Sam Smith</h4>
+            </div>  
+          </div>
+          <h4 class="text-blue row">Date Posted</h4>
+        </div>
+        <div class="d-flex justify-content-between overflow-auto rtemp">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates libero iste nulla provident dolorum. Veniam dolor laudantium corporis unde autem esse eum modi ea odit maxime, sapiente eaque! Libero, distinctio.</p>
+        </div>
+        <div class="d-flex justify-content-end align-bottom mt-4">
+          <div class="row">
+            <a href="#" class="size"><i class="bi bi-arrow-up-circle icon-color"></i></a>
+          </div>
+          <div class="row">
+            <a href="#" class="size"><i class="bi bi-arrow-down-circle icon-color"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="content overflow-hidden rounded-5" id="red">
+        <div class="sidetop d-flex justify-content-between align-items-center">
+          <div class="row">
+            <div class="d-flex gap-5 align-items-center">
+              <div class="row pic-cont">
+                <img src="{%static 'images/user_blank.jpg'%}" alt="adwknda" class="round">
+              </div>
+              <h4 class="text-blue row">Dami Ryan</h4>
+            </div>  
+          </div>
+          <h4 class="text-blue row">Date Posted</h4>
+        </div>
+        <div class="d-flex justify-content-between overflow-auto rtemp">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates libero iste nulla provident dolorum. Veniam dolor laudantium corporis unde autem esse eum modi ea odit maxime, sapiente eaque! Libero, distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed natus suscipit itaque aperiam deleniti, esse reiciendis eligendi nihil, ullam sapiente exercitationem expedita porro quos voluptatibus. Adipisci labore nemo saepe cum?</p>
+        </div>
+        <div class="d-flex justify-content-end align-items-center mt-4">
+          <div class="row">
+            <a href="#" class="size"><i class="bi bi-arrow-up-circle icon-color"></i></a>
+          </div>
+          <div class="d-flex align-items-center mt-2 row">
+            <h5>6</h5>
+          </div>
+          <div class="row">
+            <a href="#" class="size"><i class="bi bi-arrow-down-circle icon-color"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="content overflow-hidden rounded-5" id="yellow">
+        <div class="sidetop d-flex justify-content-between align-items-center">
+          <div class="row">
+            <div class="d-flex gap-5 align-items-center">
+              <div class="row pic-cont">
+                <img src="{%static 'images/user_blank.jpg'%}" alt="adwknda" class="round">
+              </div>
+              <h4 class="text-blue row">Steven Strange</h4>
+            </div>  
+          </div>
+          <h4 class="text-blue row">Date Posted</h4>
+        </div>
+        <div class="d-flex justify-content-between overflow-auto rtemp">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates libero iste nulla provident dolorum. Veniam dolor laudantium corporis unde autem esse eum modi ea odit maxime, sapiente eaque! Libero, distinctio.</p>
+        </div>
+        <div class="d-flex justify-content-end align-bottom mt-4">
+          <div class="row">
+            <a href="#" class="size"><i class="bi bi-arrow-up-circle icon-color"></i></a>
+          </div>
+          <div class="d-flex align-items-center mt-2 row">
+            <h5>12</h5>
+          </div>
+          <div class="row">
+            <a href="#" class="size"><i class="bi bi-arrow-down-circle icon-color"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="content overflow-hidden rounded-5" id="blue">
+        <div class="sidetop d-flex justify-content-between align-items-center">
+          <div class="row">
+            <div class="d-flex gap-5 align-items-center">
+              <div class="row pic-cont">
+                <img src="{%static 'images/user_blank.jpg'%}" alt="adwknda" class="round">
+              </div>
+              <h4 class="text-blue row">Stranger Danger</h4>
+            </div>  
+          </div>
+          <h4 class="text-blue row">Date Posted</h4>
+        </div>
+        <div class="d-flex justify-content-between overflow-auto rtemp">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates libero iste nulla provident dolorum. Veniam dolor laudantium corporis unde autem esse eum modi ea odit maxime, sapiente eaque! Libero, distinctio.</p>
+        </div>
+        <div class="d-flex justify-content-end align-bottom mt-4">
+          <div class="row">
+            <a href="#" class="size"><i class="bi bi-arrow-up-circle icon-color"></i></a>
+          </div>
+          <div class="d-flex align-items-center mt-2 row">
+            <h5>26</h5>
+          </div>
+          <div class="row">
+            <a href="#" class="size"><i class="bi bi-arrow-down-circle icon-color"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="content overflow-hidden rounded-5" id="red">
+        <div class="sidetop d-flex justify-content-between align-items-center">
+          <div class="row">
+            <div class="d-flex gap-5 align-items-center">
+              <div class="row pic-cont">
+                <img src="{%static 'images/user_blank.jpg'%}" alt="adwknda" class="round">
+              </div>
+              <h4 class="text-blue row">Lorem Pia</h4>
+            </div>  
+          </div>
+          <h4 class="text-blue row">Date Posted</h4>
+        </div>
+        <div class="d-flex justify-content-between overflow-auto rtemp">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates libero iste nulla provident dolorum. Veniam dolor laudantium corporis unde autem esse eum modi ea odit maxime, sapiente eaque! Libero, distinctio.</p>
+        </div>
+        <div class="d-flex justify-content-end align-bottom mt-4">
+          <div class="row">
+            <a href="#" class="size"><i class="bi bi-arrow-up-circle icon-color"></i></a>
+          </div>
+          <div class="d-flex align-items-center mt-2 row">
+            <h5>2</h5>
+          </div>
+          <div class="row">
+            <a href="#" class="size"><i class="bi bi-arrow-down-circle icon-color"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

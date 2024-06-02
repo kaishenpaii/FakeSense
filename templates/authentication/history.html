@@ -1,0 +1,300 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'styles/history.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <title>Document History</title>
+</head>
+<body>
+  <div id="background-element">
+    <img id="background-img" src="{%static 'images/background.png'%}" alt="bg">
+  </div>  
+  <div class="acct-hist">
+    
+    <div class="left">
+      <a href="/homepage">
+        <img id="logo" src="{%static 'images/colorLogo.png'%}" alt="Fakesense">
+      </a>
+      <div class="prof-pic">
+        <div class="img-container">
+          <img src="https://louisville.edu/enrollmentmanagement/images/person-icon/image" alt="Unknown">
+        </div>
+        <h3 class="mt-3">{{ fname }} {{lname}}</h3>
+      </div>
+      <div class="d-grid gap">
+        <button type="button" class="btn  btn-secondary fs-5 disabled"><a class="text-white link-underline-opacity-0" href="#">Document History</a></button>
+        <button type="button" class="btn btn-light fs-5"><a class="text-blue" href="/settings">Settings</a></button>
+      </div>
+      <div class="d-grid bottom">
+        <button type="submit" class="btn btn-outline-primary fs-5"><a class="text-white" href="/signout">Logout</a></button>
+      </div>
+    </div>
+
+    <div class="right">
+      <nav class="navbar navbar-expand-lg my-3" >
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav gap-5">
+              <li class="nav-item ">
+                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover active fs-5" aria-current="page" href="/homepage#div2">Tutorial</a>
+              </li>
+              <li class="nav-item">
+                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover active fs-5" href="/homepage#div3">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover active fs-5" href="/community">Community</a>
+              </li>
+              <li class="nav-item">
+                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover active fs-5" href="/homepage#div5">Contact</a>
+              </li>
+              <li class="nav-item icon-color">
+                <a class="link-offset-2 link-offset-3-hover active fs-5" href="#"><i class="bi bi-question-circle-fill icon-color"> </i></a>
+              </li>
+              <li class="nav-item icon-color">
+                <a class="link-offset-2 link-offset-3-hover fs-5" href="/settings"><i class="bi bi-gear-fill icon-color"> </i></a>
+              </li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="header ms-5 ps-5">
+        <h3>Document History</h3>
+        <h6>21 total</h6>
+      </div>
+      <div class="content overflow-y-scroll">
+        <table class="table px-5 table-primary table-striped text-center align-middle">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Content</th>
+              <th scope="col">Authenticity Scale</th>
+              <th scope="col">Full Result</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1-12-2020</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-primary"><a class="text-white" href="#">Authentic</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">1-23-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-warning"><a class="text-black px-1" href="#">Dubious</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2-4-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-danger"><a class="text-white px-3" href="#">Fake</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2-12-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-danger"><a class="text-white px-3" href="#">Fake</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3-1-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-primary"><a class="text-white" href="#">Authentic</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4-12-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-danger"><a class="text-white px-3" href="#">Fake</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4-16-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-primary"><a class="text-white" href="#">Authentic</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4-20-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-warning"><a class="text-black px-1" href="#">Dubious</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5-16-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-primary"><a class="text-white" href="#">Authentic</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">6-12-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-warning"><a class="text-black px-1" href="#">Dubious</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">7-6-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-warning"><a class="text-black px-1" href="#">Dubious</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">8-21-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-primary"><a class="text-white" href="#">Authentic</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">8-30-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-danger"><a class="text-white px-3" href="#">Fake</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">9-12-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-warning"><a class="text-black px-1" href="#">Dubious</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10-11-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-danger"><a class="text-white px-3" href="#">Fake</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">11-12-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-warning"><a class="text-black px-1" href="#">Dubious</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">12-12-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-primary"><a class="text-white" href="#">Authentic</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">12-28-2021</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-warning"><a class="text-black px-1" href="#">Dubious</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">1-12-2022</th>
+              <td class="overflow-x-hidden sumr">Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+              <td><button type="button" class="btn btn-danger"><a class="text-white px-3" href="#">Fake</a></button></td>
+              <td><button type="button" class="btn btn-dark"><a class="text-white" href="#">Result</a></button></td>
+              <td class="d-flex">
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-pin-angle-fill ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-archive ps-2 icon-color"></i></a>
+                <a class="icon-color fs-5 py-1" href="#"><i class="bi bi-share-fill ps-2 icon-color"></i></a>                              
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

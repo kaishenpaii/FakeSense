@@ -1,0 +1,314 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles/verify.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>FakeSense</title>
+  </head>
+  <body>
+    <div id="div1">
+      <header>
+        <img
+          class="logo"
+          src="{% static 'images/logo-blue.png' %}"
+          alt="No image found"
+        />
+        <nav>
+          <ul class="nav_links">
+            <li><a href="#div2">Tutorial</a></li>
+            <li><a href="#div3">About</a></li>
+            <li><a href="#div5">Contact</a></li>
+          </ul>
+        </nav>
+        {% if user.is_authenticated %}
+        <a href="/settings" class="cta"><button>Profile</button></a>
+
+        {% else %}
+        <a href="/signup" class="cta"><button>Login/Signup</button></a>
+
+        {% endif %}
+      </header>
+      <article>
+        <div class="left_pane container px-0" style="width: 55%">
+          <div class="verify-header container text-center">
+            <div class="row align-items-start">
+              <div class="col row align-items-center">
+                <button class="article-button">
+                  <div class="icon-circle">
+                    <i class="bi bi-file-earmark-text"></i>
+                  </div>
+                  ARTICLE
+                </button>
+              </div>
+              <div class="col row align-items-center">
+                <button class="person-button">
+                  <div class="icon-circle">
+                    <i class="bi bi-person"></i>
+                  </div>
+                  ACCOUNT
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="verify-textarea container text-center">
+            {% if textarea_value %}
+            <textarea
+              class="col row align-items-center"
+              id="inputTextArea"
+              cols="30"
+              rows="18"
+              oninput="updateCharacterCount()"
+            >
+              {{ textarea_value }}  
+            </textarea>
+
+            {% else %}
+            <textarea
+              class="col row align-items-center"
+              name=""
+              id="inputTextArea"
+              cols="30"
+              rows="18"
+              oninput="updateCharacterCount()"
+            >
+            </textarea>
+            {% endif %}
+          </div>
+
+          <div class="verify-footer container text-center">
+            <div class="character-holder row align-items-start">
+              <div class="col d-flex align-items-center m-0">
+                <!-- Circle container -->
+                <div class="auth-circle"></div>
+                <p class="mb-0">Article is {{ result }} with {{ confidence }}% confidence</p>
+                <!-- <p class="mb-0">Article is Authentic</p> -->
+              </div>
+              <div class="col row align-items-start m-0">
+                <p class="mb-0" id="characterCount">{{ char_count }} characters</p>
+              </div>
+            </div>
+
+            <div class="row align-items-start" style="height: 80px">
+              <button class="verify-button m-auto" style="width: 20%">
+                Verify
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="right_pane container px-0" style="width: 35%">
+          <div class="result-header container text-center">
+            <div class="row align-items-start">
+              <div class="col row align-items-center">
+                <button class="result-button">
+                  <div class="icon-circle">
+                    <i class="bi bi-opencollective"></i>
+                  </div>
+                  RESULT
+                </button>
+              </div>
+              <div class="col row align-items-center">
+                <button class="sources-button">
+                  <div class="icon-circle">
+                    <i class="bi bi-quote"></i>
+                  </div>
+                  SOURCES
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="result-chart-header container py-3 px-5 align-items-center text-left"
+          >
+            <p class="mb-0 my-auto"><b>Classification</b></p>
+            <p class="m-auto py-2">
+              We are highly confident this article is
+              <span class="result-label"><b>{{ result }}</b></span>
+            </p>
+          </div>
+
+          <div class="result-chart container text-center">
+            <canvas id="myChart"> </canvas>
+            <p class="chart-title" style="color: rgb(33, 145, 251)">
+              <b>{{ result }}</b>
+            </p>
+          </div>
+
+          <div class="result-chart-footer container text-center">
+            <div class="probability-holder row align-items-start">
+              <div
+                class="probability-holder-line probability-contents col row align-items-center m-auto"
+              >
+                <p class="mb-0"><span>{{ confidence }}% </span>Probability: {{ result }}</p>
+              </div>
+              <div
+                class="probability-contents col d-flex align-items-center m-auto"
+              >
+                <!-- Circle container -->
+                <div
+                  class="auth-circle"
+                  style="background-color: rgba(255, 176, 172, 50)"
+                ></div>
+                <div
+                  class="auth-circle"
+                  style="background-color: rgba(255, 219, 125, 50)"
+                ></div>
+                <div
+                  class="auth-circle"
+                  style="
+                    background-color: rgb(33, 145, 251);
+                    border: 1px solid rgba(53, 53, 49, 50);
+                  "
+                ></div>
+                <p class="mb-0">Article is {{ result }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-footer container py-3 px-5 text-left">
+            <p class="mb-0 my-auto"><b>Probability Breakdown</b></p>
+            <p>
+              The probability this article/account is Fake, Dubious, or
+              Authentic.
+            </p>
+          </div>
+          <div class="result-footer-chart container px-5 text-left">
+            <div class="line-chart mx-auto" id="line-chart">
+              <div class="bar">
+                <div
+                  class="segment"
+                  style="
+                    background-color: rgb(33, 145, 251);
+                    border-radius: 10px 0 0 10px;
+                  "
+                ></div>
+                <div
+                  class="segment"
+                  style="background-color: rgb(255, 212, 103)"
+                ></div>
+                <div
+                  class="segment"
+                  style="
+                    background-color: rgb(255, 141, 137);
+                    border-radius: 0 10px 10px 0;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-footer-chart-tags container text-center">
+            <div class="chart-tags mx-auto row align-items-center">
+              <div class="col row align-items-center m-0">
+                <p
+                  class="mb-0"
+                  id="characterCount"
+                  style="color: rgb(33, 145, 251)"
+                >
+                  <b>Authentic</b>
+                </p>
+                <p class="mb-0" id="characterCount">{{ real_percentage }}%</p> <!-- pass percentage here -->
+              </div>
+              <div class="col row align-items-center m-0">
+                <p
+                  class="mb-0"
+                  id="characterCount"
+                  style="color: rgb(255, 212, 103)"
+                >
+                  <b>Dubious</b>
+                </p>
+                <p class="mb-0" id="characterCount">{{ dubious_percentage }}%</p> <!-- pass percentage here -->
+              </div>
+              <div class="col row align-items-center m-0">
+                <p
+                  class="mb-0"
+                  id="characterCount"
+                  style="color: rgb(255, 141, 137)"
+                >
+                  <b>Fake</b>
+                </p>
+                <p class="mb-0" id="characterCount">{{ fake_percentage }}%</p> <!-- pass percentage here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <script>
+      function updateCharacterCount() {
+        var button = document.getElementById("verify_btn");
+        var textarea = document.getElementById("inputTextArea");
+        var text = textarea.value;
+        var count = text.length;
+
+        document.getElementById("characterCount").innerText =
+          count + " characters";
+      }
+
+      // Function to render chart
+      // Function to render chart
+    function renderPieChart(authenticityPercentage) {
+        var ctx = document.getElementById("myChart").getContext("2d");
+        var myChart = new Chart(ctx, {
+            type: "doughnut", // Set chart type to pie
+            data: {
+                labels: ["Authentic", "Fake"], // Labels for authenticity/fakeness
+                datasets: [
+                    {
+                        label: "Authenticity", // Label for dataset
+                        data: [authenticityPercentage, 100 - authenticityPercentage], // Data for authenticity/fakeness
+                        backgroundColor: [
+                            "rgba(33, 145, 251, 1)", // Color for authentic data
+                            "rgba(245, 245, 245, 1)", // Color for fake data
+                        ],
+                        borderColor: [
+                            "rgba(33, 145, 251, 1)", // Border color for authentic data
+                            "rgba(245, 245, 245, 1)", // Border color for fake data
+                        ],
+                        borderWidth: 1,
+                        borderAlign: "inner", // Align the border to the inner side of the doughnut
+                        borderRadius: 10, // Set border radius for the AuthenticPercentage segment
+                    },
+                ],
+            },
+            options: {
+                // Add options here if needed
+                aspectRatio: 2, // Adjust aspect ratio
+                maintainAspectRatio: false, // Disable aspect ratio maintenance
+                cutout: "80%", // Adjust cutout radius
+                plugins: {
+                    legend: {
+                        display: false, // Hide the chart legend
+                    },
+                },
+            },
+        });
+    }
+
+    // Call the renderPieChart function with the confidence value passed from Django
+    renderPieChart({{ confidence }});
+
+    // Define the data
+    const data = [({{ real_percentage }} / 100), ({{ dubious_percentage }} / 100), ({{ fake_percentage }}/ 100)] ; // Percentage values for each segment
+
+    // Get segments and set widths based on data
+    const segments = document.querySelectorAll(".segment");
+    segments.forEach((segment, index) => {
+        segment.style.width = data[index] * 100 + "%";
+    });
+    </script>
+  </body>
+</html>

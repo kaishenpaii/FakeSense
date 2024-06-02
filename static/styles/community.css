@@ -1,0 +1,131 @@
+/* HISTORY CSS THINGS */
+
+body{
+  height: 100%;
+  font-family: 'Roboto';font-size: 22px;
+  color: #0A369D;
+}
+#background-element {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+#background-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.acct-hist{
+  z-index: 1;
+}
+.right{
+  width: 100%;
+}
+nav{
+  position: absolute;
+  top: 1vh;
+}
+#logo{
+  width: 17vw;
+  position: absolute;
+  margin: 0 auto 0 2vw;
+}
+
+.icon-color{
+  color: rgb(36,145,254);
+  width: 100%;
+  display: block;
+}
+.icon-color :hover{
+  color: rgb(1,68,175,1);
+}
+.btn a {
+  text-decoration: none;
+  width: 100%;
+  display: inline-block;
+}
+.header{
+  color: rgb(1,68,175,1);
+  position: relative;
+}
+.content{
+  background-color: white;
+  height: auto;
+  margin:3% 7%;
+  border-radius: 5px;
+  padding:4%;
+  z-index: 1;
+  position: relative;
+}
+.rtemp{
+  padding: 2vh 4vw;
+  overflow: hidden;
+  height:78%;
+}
+.isDisabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.isDisabled > a {
+  color: currentColor;
+  display: inline-block;  /* For IE11/ MS Edge bug */
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.sidetop{
+  margin: 0.3% 0 0 1%;
+}
+.size{
+  font-size: xx-large;
+}
+.size i{
+  object-fit: cover;
+  padding: 0 5px;
+}
+.round{
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0A369D; 
+  overflow: hidden;
+}
+.pic-cont{
+  width: 4vw;
+  height: 4vw;
+}
+#yellow{
+  border-left: 35px solid #ffc107;
+}
+#red{
+  border-left: 35px solid #dc3545;
+}
+#gray{
+  border-left: 35px solid #ddd;
+}
+#blue{
+  border-left: 35px solid #0A369D;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
